@@ -1,12 +1,14 @@
 package com.example.navendu.coursemanagementsystem;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +49,7 @@ public class FragmentD extends Fragment {
 
 
 
-        getActivity().findViewById(R.id.f1).setOnClickListener(new View.OnClickListener() {
+        v.findViewById(R.id.f1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -62,15 +64,14 @@ public class FragmentD extends Fragment {
 
 
 
-                SharedPreferences sharedPreferences = getActivity().getPreferences(MODE_PRIVATE);
 
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("CourseManagementSystem",MODE_PRIVATE);
                 String retrievedValue = sharedPreferences.getString("courses","0");
 
 
               retrievedValue+=e1.toString()+" "+e2.toString()+" "+e3.toString()+" "+ss+";";
 
-
-
+              Log.i("hello",retrievedValue);
                 final SharedPreferences.Editor editor = sharedPreferences.edit();
 
 
@@ -78,7 +79,13 @@ public class FragmentD extends Fragment {
 
                 editor.putString("couses",retrievedValue);
 
-                editor.apply();
+
+                editor.commit();
+
+                e1.setText("");
+                e2.setText("");
+                e3.setText("");
+
 
 
             }
@@ -87,7 +94,7 @@ public class FragmentD extends Fragment {
 
 
 
-        getActivity().findViewById(R.id.f1).setOnClickListener(new View.OnClickListener() {
+        v.findViewById(R.id.f2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -136,7 +143,7 @@ public class FragmentD extends Fragment {
                 editor.putString("couses",ret);
 
                 editor.apply();
-
+                editor.commit();
 
             }
         });
@@ -146,20 +153,16 @@ public class FragmentD extends Fragment {
 
 
 
-        getActivity().findViewById(R.id.f1).setOnClickListener(new View.OnClickListener() {
+        v.findViewById(R.id.f3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
                 EditText e1=(EditText) getActivity().findViewById(R.id.e1);
 
+                Intent i=new Intent(getActivity(),viewcourse.class);
+                startActivity(i);
 
-
-
-
-                SharedPreferences sharedPreferences = getActivity().getPreferences(MODE_PRIVATE);
-
-                String retrievedValue = sharedPreferences.getString("courses","0");
 
 
 
