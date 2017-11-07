@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/ll"
+            >
+
+            <Button
+                android:id="@+id/blueButton"
+
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:textSize="20px"
+                android:text="Mstudent"
+
+                />
+
+            <Button
+                android:id="@+id/redButton"
+
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:textSize="20px"
+                android:text="Mfaculty" />
+
+
+            <Button
+                android:id="@+id/greenButton"
+
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:textSize="20px"
+                android:text="Mcourses" />
+
+            <Button
+                android:id="@+id/pinkButton"
+
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:textSize="20px"
+                android:layout_height="50dp"
+                android:text="Mmarks" />
+
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:background="#ffffff"
+            android:layout_height="400dp" />
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/ll2">
+
+        <Button
+            android:id="@+id/Button1"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:textSize="20px"
+            android:text="Mattendance"
+            />
+
+        <Button
+            android:id="@+id/Button2"
+
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:text="upload"
+            android:textSize="20px"/>
+
+
+        <Button
+            android:id="@+id/Button3"
+
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:text="download"
+            android:textSize="20px"/>
+
+        <Button
+            android:id="@+id/Button4"
+            android:textSize="20px"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:text="forum" />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
