@@ -19,6 +19,10 @@ import static android.content.Context.MODE_PRIVATE;
 
 
 public class FragmentD extends Fragment {
+
+
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
     public static FragmentD newInstance(int count) {
 
         Bundle args = new Bundle();
@@ -31,6 +35,12 @@ public class FragmentD extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+
+        sharedPreferences = getActivity().getSharedPreferences("CourseManagementSystem",MODE_PRIVATE);
+         editor = sharedPreferences.edit();
+
+
 
         if (container != null) {
             container.removeAllViews();
@@ -65,15 +75,12 @@ public class FragmentD extends Fragment {
 
 
 
-                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("CourseManagementSystem",MODE_PRIVATE);
                 String retrievedValue = sharedPreferences.getString("courses","0");
 
 
-              retrievedValue+=e1.toString()+" "+e2.toString()+" "+e3.toString()+" "+ss+";";
+              retrievedValue+=e1.getText().toString()+" "+e2.getText().toString()+" "+e3.getText().toString()+" "+ss+";";
 
               Log.i("hello",retrievedValue);
-                final SharedPreferences.Editor editor = sharedPreferences.edit();
-
 
 
 
@@ -105,7 +112,7 @@ public class FragmentD extends Fragment {
 
 
 
-                SharedPreferences sharedPreferences = getActivity().getPreferences(MODE_PRIVATE);
+               // SharedPreferences sharedPreferences = getActivity().getPreferences(MODE_PRIVATE);
 
                 String retrievedValue = sharedPreferences.getString("courses","0");
 
