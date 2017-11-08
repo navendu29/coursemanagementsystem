@@ -16,12 +16,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-</activity>
-
+        </activity>
         <activity
             android:name=".viewcourse"
             android:label="@string/title_activity_viewcourse"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".viewfaculty" />
+        <activity android:name=".viewstudent" />
+        <activity android:name=".viewmarks"></activity>
     </application>
 
 </manifest>

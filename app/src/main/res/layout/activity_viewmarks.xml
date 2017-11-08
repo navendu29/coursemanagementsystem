@@ -5,18 +5,29 @@
     android:fillViewport="true">
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.navendu.coursemanagementsystem.viewmarks">
 
     <EditText
-        android:layout_marginTop="50dp"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ff1"
+        android:layout_marginTop="30dp"
+        />
 
 
-android:id="@+id/e1"
+    <Button
+        android:layout_marginTop="30dp"
         android:layout_gravity="center_horizontal"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="getdetails"
+        android:id="@+id/bb"/>
 
-        android:layout_height="wrap_content" />
     <LinearLayout
         android:layout_marginTop="30dp"
         android:layout_width="wrap_content"
@@ -28,17 +39,17 @@ android:id="@+id/e1"
             android:layout_width="100dp"
             android:layout_marginLeft="50dp"
             android:layout_height="wrap_content"
-            android:id="@+id/e2"
+            android:id="@+id/s1"
             android:drawSelectorOnTop="true"
             android:entries="@array/array1_name"
 
             />
 
-        <EditText
+        <TextView
             android:layout_width="100dp"
 
             android:layout_height="wrap_content"
-            android:id="@+id/e3" />
+            android:id="@+id/m1" />
 
 
 
@@ -55,17 +66,17 @@ android:id="@+id/e1"
             android:layout_width="100dp"
             android:layout_marginLeft="50dp"
             android:layout_height="wrap_content"
-            android:id="@+id/e4"
+            android:id="@+id/s2"
             android:drawSelectorOnTop="true"
             android:entries="@array/array1_name"
 
             />
 
-        <EditText
+        <TextView
             android:layout_width="100dp"
 
             android:layout_height="wrap_content"
-            android:id="@+id/e5" />
+            android:id="@+id/m2" />
 
 
 
@@ -81,17 +92,17 @@ android:id="@+id/e1"
             android:layout_width="100dp"
             android:layout_marginLeft="50dp"
             android:layout_height="wrap_content"
-            android:id="@+id/e6"
+            android:id="@+id/s3"
             android:drawSelectorOnTop="true"
             android:entries="@array/array1_name"
 
             />
 
-        <EditText
+        <TextView
             android:layout_width="100dp"
 
             android:layout_height="wrap_content"
-            android:id="@+id/e7" />
+            android:id="@+id/m3" />
 
 
 
@@ -107,17 +118,17 @@ android:id="@+id/e1"
             android:layout_width="100dp"
             android:layout_marginLeft="50dp"
             android:layout_height="wrap_content"
-            android:id="@+id/e8"
+            android:id="@+id/s4"
             android:drawSelectorOnTop="true"
             android:entries="@array/array1_name"
 
             />
 
-        <EditText
+        <TextView
             android:layout_width="100dp"
 
             android:layout_height="wrap_content"
-            android:id="@+id/e9" />
+            android:id="@+id/m4" />
 
 
 
@@ -133,42 +144,21 @@ android:id="@+id/e1"
             android:layout_width="100dp"
             android:layout_marginLeft="50dp"
             android:layout_height="wrap_content"
-            android:id="@+id/e10"
+            android:id="@+id/s5"
             android:drawSelectorOnTop="true"
             android:entries="@array/array1_name"
 
             />
 
-        <EditText
+        <TextView
             android:layout_width="100dp"
 
             android:layout_height="wrap_content"
-            android:id="@+id/e11" />
+            android:id="@+id/m5" />
 
 
 
     </LinearLayout>
-
-<LinearLayout
-    android:layout_width="match_parent"
- android:orientation="horizontal"
-    android:layout_height="wrap_content">
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:id="@+id/b1"
-        android:layout_weight="1"
-        android:text="Mark Marks"
-        />
-
-    <Button
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:id="@+id/b2"
-        android:layout_weight="1"
-        android:text="View marks"
-        />
 
 </LinearLayout>
-</LinearLayout>
-    </ScrollView>
+</ScrollView>

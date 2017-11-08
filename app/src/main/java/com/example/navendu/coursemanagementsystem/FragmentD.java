@@ -8,12 +8,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -71,11 +73,69 @@ public class FragmentD extends Fragment {
                 String ss=s.getSelectedItem().toString();
 
 
+                if (TextUtils.isEmpty(e1.getText())) {
+                    e1.setError("Empty");
+                    return;
+
+                }
+
+
+                if (TextUtils.isEmpty(e2.getText())) {
+                    e2.setError("Empty");
+                    return;
+
+                }
+                if (TextUtils.isEmpty(e3.getText())) {
+                    e3.setError("Empty");
+                    return;
+
+                }
 
 
 
 
                 String retrievedValue = sharedPreferences.getString("courses","0");
+                Log.i("yoyoyo",retrievedValue);
+
+                // TextView t=(TextView) findViewById(R.id.ff);
+
+
+                String[] ans=retrievedValue.split(";");
+                boolean flag=false;
+                for(int i=0;i<ans.length;++i)
+                {String d=ans[i].split(" ")[0];
+                    if(e1.getText().toString().compareTo(d)==0)
+                    {
+
+
+                        if(flag==false)
+                        {
+                            e1.setError("course already exists");
+                            return;
+
+
+                        }
+
+
+                        // t.setText(ans[i]);
+
+                        break;
+                    }
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+                retrievedValue = sharedPreferences.getString("courses","0");
 
 
               retrievedValue+=e1.getText().toString()+" "+e2.getText().toString()+" "+e3.getText().toString()+" "+ss+";";
@@ -84,7 +144,7 @@ public class FragmentD extends Fragment {
 
 
 
-                editor.putString("couses",retrievedValue);
+                editor.putString("courses",retrievedValue);
 
 
                 editor.commit();
@@ -92,6 +152,9 @@ public class FragmentD extends Fragment {
                 e1.setText("");
                 e2.setText("");
                 e3.setText("");
+
+                Toast.makeText(getContext(),"course added",Toast.LENGTH_SHORT).show();
+
 
 
 
@@ -108,9 +171,11 @@ public class FragmentD extends Fragment {
 
                 EditText e1=(EditText) getActivity().findViewById(R.id.e1);
 
+                if (TextUtils.isEmpty(e1.getText())) {
+                    e1.setError("empty");
+                    return;
 
-
-
+                }
 
                // SharedPreferences sharedPreferences = getActivity().getPreferences(MODE_PRIVATE);
 
@@ -147,10 +212,13 @@ public class FragmentD extends Fragment {
 
 
 
-                editor.putString("couses",ret);
+                editor.putString("courses",ret);
 
                 editor.apply();
                 editor.commit();
+
+
+                Toast.makeText(getContext(),"course deleted",Toast.LENGTH_SHORT).show();
 
             }
         });
